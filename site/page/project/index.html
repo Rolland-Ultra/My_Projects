@@ -1,0 +1,1313 @@
+
+
+<!DOCTYPE html>
+<html lang="ru" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Проект &#34;Asteroids&#34; - ECOllapce</title>
+
+  <meta name="description" content="Подробное руководство о воссоздании культовой аркады с помощью WPF">
+  <meta name="author" content="ECOllapce"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Project Practice \u0022ECOllapse\u0022 Site",
+    
+    "url": "\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/page\/project\/",
+          "name": "Проект \u0022 asteroids\u0022"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "ECOllapce"
+  },
+  "headline": "Проект \u0022Asteroids\u0022",
+  "description" : "Вступление Рисунок 1.1 - Финальный продукт\nДанное руководство предназначено для начинающих разработчиков видеоигр, решивших создать свой первый продукт с помощью WPF. Руководство рассчитано на тех, кто имеет базовые представления о синтаксисе языка программирования C# (или хотя бы знает основы программирования) и тех, кто знаком с видеоиграми и имеет некоторое о них представление.\nИсследовательская часть Стек используемых технологий для реализации программы: Windows Presentation Foundation – фундамент, построенный на: Язык программирования C#, на котором реализована вся логика программы; Язык разметки XAML для реализации пользовательского интерфейса; Microsoft Visual Studio – для создания и редактирования .xaml и .cs файлов. Техники, используемые разработчиками сегодня и техники, применённые в Asteroids Несмотря на прошедшие десятилетия, у тогдашних разработчиков видеоигр и сегодняшних кое-что общее: их главная задача – как можно дольше удержать игрока в игре, чтобы, как следствие, “выжать” из него как можно больше денег. Если раньше это достигалось повышенной сложностью видеоигр, неожиданными ситуациями и, временами нечестными по отношению к игроку, методами, то сейчас это происходит по множеству самых изощрённых схем, от концепции потока до “гачи-механик” (разновидность сбора коллекционных предметов).\n",
+  "inLanguage" : "ru",
+  "wordCount":  5910 ,
+  "datePublished" : "0001-01-01T00:00:00\u002b00:00",
+  "dateModified" : "0001-01-01T00:00:00\u002b00:00",
+  "image" : "\/img\/icon.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "\/page\/project\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/img\/icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Проект &#34;Asteroids&#34;" />
+<meta property="og:description" content="Подробное руководство о воссоздании культовой аркады с помощью WPF">
+<meta property="og:image" content="/img/icon.png" />
+<meta property="og:url" content="/page/project/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Project Practice &#34;ECOllapse&#34; Site" />
+
+  <meta name="twitter:title" content="Проект &#34;Asteroids&#34;" />
+  <meta name="twitter:description" content="Подробное руководство о воссоздании культовой аркады с помощью WPF">
+  <meta name="twitter:image" content="/img/icon.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href='../../img/favicon32.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.147.3">
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Project Practice &#34;ECOllapse&#34; Site"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" /><link rel="stylesheet" href="../../css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Навигация</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Project Practice &#34;ECOllapse&#34; Site</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Journal" href="../../">Journal</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About project" href="../../page/about/">About project</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Members" href="../../page/members/">Members</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Resources" href="../../page/resources/">Resources</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Variable part of the task" href="../../page/project/">Variable part of the task</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Project Practice &#34;ECOllapse&#34; Site" href="../../">
+            <img class="avatar-img" src="../../img/icon.png" alt="Project Practice &#34;ECOllapse&#34; Site" />
+           
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              
+                <h1>Проект &#34;Asteroids&#34;</h1>
+              
+              
+                <hr class="small">
+              
+              
+                
+                  <span class="page-subheading">Подробное руководство о воссоздании культовой аркады с помощью WPF</span>
+                
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h1 id="вступление">Вступление</h1>
+<p><img src="../../img/game.png" alt="Финальный продукт">
+Рисунок 1.1 - Финальный продукт</p>
+<p>Данное руководство предназначено для начинающих разработчиков видеоигр, решивших создать свой первый продукт с помощью WPF. Руководство рассчитано на тех, кто имеет базовые представления о синтаксисе языка программирования C# (или хотя бы знает основы программирования) и тех, кто знаком с видеоиграми и имеет некоторое о них представление.</p>
+<h1 id="исследовательская-часть">Исследовательская часть</h1>
+<h2 id="стек-используемых-технологий-для-реализации-программы">Стек используемых технологий для реализации программы:</h2>
+<ul>
+<li>Windows Presentation Foundation – фундамент, построенный на:
+<ul>
+<li>Язык программирования C#, на котором реализована вся логика программы;</li>
+<li>Язык разметки XAML для реализации пользовательского интерфейса;</li>
+</ul>
+</li>
+<li>Microsoft Visual Studio – для создания и редактирования .xaml и .cs файлов.</li>
+</ul>
+<h2 id="техники-используемые-разработчиками-сегодня-и-техники-применённые-в-asteroids">Техники, используемые разработчиками сегодня и техники, применённые в Asteroids</h2>
+<p>Несмотря на прошедшие десятилетия, у тогдашних разработчиков видеоигр и сегодняшних кое-что общее: их главная задача – как можно дольше удержать игрока в игре, чтобы, как следствие, “выжать” из него как можно больше денег. Если раньше это достигалось повышенной сложностью видеоигр, неожиданными ситуациями и, временами нечестными по отношению к игроку, методами, то сейчас это происходит по множеству самых изощрённых схем, от концепции потока до “гачи-механик” (разновидность сбора коллекционных предметов).</p>
+<p>Самым главным изменением с тех времён стало появление джойстика, а затем и мыши, что позволило сильно облегчить управление игровым персонажем, а с появлением большего количества кнопок у современных консолей (или, если говорить про персональные компьютеры, с учётом клавиатуры) – куда разнообразнее.</p>
+<p>Игры прошлых поколений достаточно для современных геймеров. Раньше перед геймдизайнерами не было цели усложнить игру десятками механик, сотнями параметров и огромным пластом запутанного сюжета – чёткие цели для победы, незамысловатое (но не значит простое) управление, простая (по современным меркам) графическая составляющая – таков был рецепт тогдашней Asteroids. Её целью было набрать как можно больше очков, уничтожая астероиды и летающие тарелки, при этом, не столкнувшись с ними и попутно уклоняясь от вражеских выстрелов; управление: ускорение в сторону носа корабля, повороты, стрельба и телепорт для крайних случаев; графика – набор векторов. Тем не менее, несмотря на свою простоту, Asteroids не зря получила своё звание одной из самых популярных аркад.</p>
+<h2 id="принципы-разработки-видеоигр">Принципы разработки видеоигр</h2>
+<p>Ключевой особенностью игр с программной точки зрения – необходимость постоянно обновлять данные всего игрового пространства. Данные обновления происходят на основе имеющихся в программе данных (которые можно просчитать заранее), а также на основе пользовательского ввода, предсказать который невозможно. В связи с этим перед началом разработки необходимо позаботиться о том, что данные будут постоянно обновляться с определённой периодичностью.</p>
+<p>Вообще же, последние несколько десятилетий для создания видеоигр в основном используются видеоигровые движки (Unity, Unreal Engine, Godot, многие другие), специально созданные для упрощения создания игр как людьми, только постигающими программирование (а игровые движки заточены в первую очередь под программистов, работу и организацию кода и взаимосвязей между его частями), так и для облегчения работы крупных компаний. Тем не менее, он не является обязательным компонентом для создания игры (хотя и очень желательным, будь то уже упомянутые Unity, Unreal и другие или какой-либо написанный самостоятельно и заточенный под конкретные задачи). При разработке видеоигры без игрового движка программисту (а при отсутствии игрового движка им приходиться особенно тяжело) приходиться просчитывать все низкоуровневые задачи и учитывать все вероятные исходы поведения программы в той или иной ситуации. Такие инструменты, как WPF, сильно облегчают программистам задачу, обрабатывая большинство таких исходов.</p>
+<p>Конкретно WPF позволяет: работать с векторной графикой, просчитывать пересечение этих векторов, обновлять их месторасположение в “игровом мире”, отрисовывать UI (пользовательский интерфейс) – буквально за несколько строк кода; обработку остальной логики можно реализовать на C#. О из самых популярных (но далеко не единственным) приложением, позволяющее работать с WPF, является Microsoft Visual Studio, имеющее достаточные возможности для реализации подобного проекта.</p>
+<p>Если говорить именно про реализацию “Asteroids” – игры для аркадных автоматов, выпущенной Atari в 1979 году – то передо мной не стояло цели воспроизвести её точь-в-точь. Моей целью была лишь реализация основных механик, используемая в аркаде (потому в итоговом продукте имеется несколько расхождений с игрой 1979 г.).</p>
+<h2 id="об-аркаде">Об аркаде</h2>
+<p>“Asteroids” представляла собой игру, в которой игрок берёт под контроль некий звездолёт с нетривиальной системой управления, оружием для борьбы с внешними угрозами и “варпдвигателем” – устройством для мгновенного перемещения в пространстве. Его задача – уничтожить с помощью своего оружия как можно больше астероидов, отбиваясь при этом от враждебных вражеских кораблей, ведущих прицельный огонь по игроку. Говоря игровыми терминами:</p>
+<ul>
+<li>под звездолётом подразумевается небольшой игровой объект стреловидной формы, способный ускоряться по направлению своего движения, поворачивать “нос” влево-вправо, выпускать перед собой “пули” и перемещаться (телепортироваться) в случайную точку игрового пространства при активации “варпдвигателя”;</li>
+<li>под астероидами подразумеваются шарообразные объекты, перемещающиеся по игровому полю в случайном направлении и разделяющиеся на несколько маленьких при попадании;</li>
+<li>под вражескими кораблями подразумевались объекты, похожие на “летающие тарелки”, выпускающие с определённым интервалом в сторону игрока снаряды;</li>
+<li>сама же игра делится на раунды, от которых зависит количество появления астероидов, время между появлениями вражеских кораблей и количество получаемых игроком очков.</li>
+</ul>
+<p>Также стоит отметить, что при достижении края игрового пространства, корабль игрока и астероиды перемещаются в точку, находящуюся на противоположной стороне экрана, т.е. эти два типа игровых объектов “зациклены” по осям X и Y и ограничены границами экрана.</p>
+<h1 id="практическая-часть">Практическая часть</h1>
+<h2 id="декомпозиция-продукта">Декомпозиция продукта</h2>
+<p>Asteroids (здесь и далее под “Asteroids” я буду подразумевать итоговый продукт, созданный в ходе проектной деятельности, если не оговорено иное) можно разбить на несколько простых составляющих, а именно:</p>
+<ul>
+<li>Игровой интерфейс (кнопки, текст, лучший счёт и система жизней);</li>
+<li>Игровые объекты (аватар игрока, астероиды, НЛО (здесь и далее под НЛО я буду подразумевать вражеские корабли), снаряды, выпускаемые игроком и НЛО);</li>
+<li>Механики взаимодействия этих объектов (преимущественно, при столкновении их друг с другом).</li>
+</ul>
+<p>Для реализации этих составляющих необходимо использовать файлы:</p>
+<ul>
+<li>“Main_Window.xaml”, отвечающий за взаимодействие пользователя и интерфейса;</li>
+<li>“Main_Window.xaml.cs”, в котором будет реализована вся основная игровая логика, а также логика взаимодействия игрока и интерфейса;</li>
+<li>“GameObject.cs”, являющийся родительским классом для всех игровых объектов и не содержащий почти никакой логики:
+<ul>
+<li>“Asteroid.cs”, содержащий логику перемещения и распада на более мелкие “копии” астероидов;</li>
+<li>“PlayerShip.cs”, содержащий всю логику для корабля игрока, а именно: передвижение, стрельба, телепортация, систему добавления очков для данного корабля, уничтожение и возрождение;</li>
+<li>“UFO.cs”, содержащий логику для НЛО, т.е. передвижение, стрельбу и уничтожение;</li>
+</ul>
+</li>
+<li>“Bullet.cs”, в котором содержится вся логика для снаряда, выпускаемого кораблём игрока и НЛО;</li>
+<li>“Ordnance.cs”, представляющим собой вспомогательный класс для обработки столкновений;</li>
+<li>“Shapes.cs”, который отвечает за отрисовку объектов (а точнее, их формы);</li>
+<li>“Effects.cs”, содержащий код для отрисовки различных эффектов (свечение, распад и т.д.).</li>
+<li>или любую другую систему распределения файлов, методов и игровой логики в целом; конкретно это система лично мне кажется наиболее логически правильной, однако я могу ошибаться…</li>
+</ul>
+<p>Для реализации того “контента”, который представлен в работе, внутри этих файлов необходимо реализовать систему классов, отвечающую за:</p>
+<ul>
+<li>Запуск игры с главного меню (отрисовка интерфейса и проработка связанных с ним действий);</li>
+<li>Загрузка игрового пространства, где будет происходить сама игра, а также подготовка этого пространства к первому раунду (отрисовка интерфейса, спавн (появление) игровых объектов, а именно аватара игрока и астероида и т.д.);</li>
+<li>Механики управления звездолётом (ускорение, повороты, стрельба, телепортация, увеличение количества очков для этого корабля, уничтожение и повторное появление, неуязвимость и т.д.);</li>
+<li>Механики астероида (передвижение, уничтожение, распад на более мелкие астероиды и т.д.);</li>
+<li>Механики пули (передвижение и т.д.);</li>
+<li>Механики обработки столкновений (и вызова связанных с ними событий);</li>
+<li>Механики системы раундов (проверка на то, остались ли на поле какие-либо объекты, кроме игрока, а также генерация следующего раунда);</li>
+<li>Механики НЛО (передвижение, стрельба, уничтожение и т.д.);</li>
+<li>и прочие вспомогательные механики (отрисовка объектов на экране, отрисовка эффектов и т.д.).</li>
+</ul>
+<h2 id="алгоритмы-и-процессы">Алгоритмы и процессы</h2>
+<p>Алгоритмы и процессы, использованные при проектировании и реализации проекта:</p>
+<ul>
+<li>Вышеупомянутая работа с интерфейсом через XAML, а также отрисовка игровых объектов через Polyline, реализованный через библиотеку System.Windows.Shapes;</li>
+<li>Обнаружение коллизии объектов, т.е. пересечение их векторов (визуального и внутри игрового представления) друг с другом;</li>
+<li>DispatcherTimer, реализованный через библиотеку System.Windows.Threading и отвечающий за постоянное обновление состояний объектов и регулярную проверку игровой логики;</li>
+<li>Система генерации псевдослучайных чисел Random, реализованная через библиотеку System и используемая при инициализации игровых объектов для добавления “элемента случайности”;</li>
+<li>Обработка пользовательского ввода через метод canvas_KeyDown(), отвечающий за нажатие клавиш на клавиатуре и связанную с этим обработку событий.</li>
+</ul>
+<p>Все эти алгоритмы реализованы на аппаратном уровне внутри самого WPF и C#, более конкретная реализация настраивается непосредственно в самих классах, создаваемых программистом.</p>
+<h2 id="процесс-создания">Процесс создания</h2>
+<h3 id="меню-и-прочий-интерфейс">Меню и прочий интерфейс</h3>
+<p>Весь пользовательский интерфейс можно разделить на следующие составляющие:</p>
+<ul>
+<li>Главное меню, содержащее:
+<ul>
+<li>Заголовок;</li>
+<li>Кнопка “Начать игру”;</li>
+<li>Кнопка “Управление”;</li>
+<li>Кнопка выхода из игры;</li>
+</ul>
+</li>
+<li>Меню, в котором указано управление в формате ([кнопка на клавиатуре, вызывающая действие]          [действие]):
+<ul>
+<li>Escape – открытие меню паузы во время игры;</li>
+<li>W – ускорение корабля по направлению его движения;</li>
+<li>A – поворот носа корабля против часовой стрелки (направо);</li>
+<li>D – поворот носа корабля по часовой стрелке (налево);</li>
+<li>S – перемещение корабля в случайное место в игровом пространстве;</li>
+<li>Space – выстрел из орудия;</li>
+<li>Кнопка для возврата в главное меню;</li>
+</ul>
+</li>
+<li>Меню паузы, содержащее:
+<ul>
+<li>Кнопка для возврата к игровому процессу;</li>
+<li>Кнопка для выхода в главное меню;</li>
+<li>Кнопка для выхода из игры;</li>
+</ul>
+</li>
+<li>И, наконец, интерфейс, появляющийся непосредственно во время игрового процесса и содержащий:
+<ul>
+<li>Счётчик очков и его обозначение;</li>
+<li>Счётчик жизней и его обозначение;</li>
+</ul>
+</li>
+</ul>
+<p>Предназначения вышеописанных меню:</p>
+<ul>
+<li>Главное меню необходимо для того, чтобы игрока “не выбрасывало в гущу событий” сразу после запуска игры, а также для того, чтобы он мог посмотреть управление, использующееся в игре и закрыть игру при необходимости.</li>
+<li>Меню “Управление” предназначено для того, чтобы игрок мог посмотреть перед игрой список кнопок, нажатия на которые будет обрабатывать программа. Здесь стоит отметить, что комбинация “WASD + Space” используется практически во всех современных играх, потому именно она и выбрана как схема управления для игры;</li>
+<li>Меню паузы необходимо для того, чтобы игрок мог приостановить игру в случае каких-либо неожиданных обстоятельств и затем продолжить с того же места без потери прогресса, а также чтобы вернуться в главное меню (чтобы посмотреть схему управления или же начать новую игру с первого раунда) или выйти из игры.</li>
+<li>Счётчики очков и жизней во время игрового процесса необходимы для того, чтобы игрок мог отслеживать эти два ключевых параметра во время игрового процесса.</li>
+</ul>
+<p>Весь этот интерфейс можно реализовать через XAML файл (листинг 3.1 и рисунок 3.1) с помощью таких компонентов, как Grid, StackPanel, TextBlock (с которыми и будет взаимодействовать игрок и события с которого будут обрабатываться в коде программы (а именно события “Наведение курсора”, “Увод курсора”, “Нажатие кнопки” и “Включение/отключение [вставьте_наименование] меню”)), и, опционально, Style. Ниже приведён пример кода реализации главного меню и итоговый результат:</p>
+<p>Листинг 3.1 – Главное меню</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;Window.Resources&gt;
+</span></span><span class="line"><span class="cl">	&lt;Style x:Key=&#34;Title&#34; TargetType=&#34;TextBlock&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;Setter Property=&#34;FontFamily&#34; Value=&#34;/Asteroid;component/Fonts/#AR DESTINE&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;Setter Property=&#34;FontSize&#34; Value=&#34;144&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;Setter Property=&#34;TextAlignment&#34; Value=&#34;Center&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;Setter Property=&#34;Foreground&#34; Value=&#34;LightGray&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;Setter Property=&#34;HorizontalAlignment&#34; Value=&#34;Center&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;Setter Property=&#34;VerticalAlignment&#34; Value=&#34;Center&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;Setter Property=&#34;RenderTransformOrigin&#34; Value=&#34;0.5,0.5&#34;/&gt;
+</span></span><span class="line"><span class="cl">	&lt;/Style&gt;
+</span></span><span class="line"><span class="cl">	&lt;Style x:Key=&#34;Button&#34; TargetType=&#34;TextBlock&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;EventSetter Event=&#34;MouseEnter&#34; Handler=&#34;MouseEnter&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;EventSetter Event=&#34;MouseLeave&#34; Handler=&#34;MouseLeave&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;EventSetter Event=&#34;MouseLeftButtonDown&#34; Handler=&#34;MouseLeftButtonDown&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;Setter Property=&#34;FontFamily&#34; Value=&#34;/Asteroid;component/Fonts/#AR DESTINE&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;Setter Property=&#34;FontSize&#34; Value=&#34;48&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;Setter Property=&#34;Foreground&#34; Value=&#34;Gray&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;Setter Property=&#34;HorizontalAlignment&#34; Value=&#34;Center&#34;/&gt;
+</span></span><span class="line"><span class="cl">	&lt;/Style&gt;
+</span></span><span class="line"><span class="cl">&lt;Style x:Key=&#34;Control&#34; TargetType=&#34;TextBlock&#34;&gt;
+</span></span><span class="line"><span class="cl">&lt;/Window.Resources&gt;
+</span></span><span class="line"><span class="cl">&lt;Grid Name=&#34;MainGrid&#34; ScrollViewer.CanContentScroll=&#34;True&#34;&gt;
+</span></span><span class="line"><span class="cl">	&lt;StackPanel Name=&#34;Main_Menu&#34; Margin=&#34;0,30,0,0&#34; Visibility=&#34;Visible&#34; CanVerticallyScroll=&#34;True&#34; ScrollViewer.CanContentScroll=&#34;True&#34; ClipToBounds=&#34;True&#34;&gt;
+</span></span><span class="line"><span class="cl">		&lt;TextBlock Style=&#34;{StaticResource Title}&#34; Text=&#34;ASTEROID&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;TextBlock Style=&#34;{StaticResource Button}&#34; Name=&#34;Main_Menu_Game&#34; MouseLeftButtonUp=&#34;Game_MouseLeftButtonUp&#34;			Text=&#34;PLAY&#34; Margin=&#34;0,75,0,0&#34;/&gt;
+</span></span><span class="line"><span class="cl">		&lt;TextBlock Style=&#34;{StaticResource Button}&#34; Name=&#34;Main_Menu_Controls&#34; MouseLeftButtonUp=&#34;Controls_MouseLeftButtonUp&#34;		Text=&#34;CONTROLS&#34; /&gt;
+</span></span><span class="line"><span class="cl">		&lt;TextBlock Style=&#34;{StaticResource Button}&#34; Name=&#34;Main_Menu_Quit&#34; MouseLeftButtonUp=&#34;Quit_MouseLeftButtonUp&#34;			Text=&#34;QUIT&#34; /&gt;
+</span></span><span class="line"><span class="cl">	&lt;/StackPanel&gt;
+</span></span><span class="line"><span class="cl">&lt;/Grid&gt;
+</span></span></code></pre></div><p><img src="../../img/main_menu.png" alt="Главное меню">
+Рисунок 3.1 – Главное меню</p>
+<p>Здесь также стоит отметить, что для текста был использован шрифт AR DESTINE в формате .ttf, который был помещён в подпапку “Fonts” решения, в котором реализуется проект и к которому обращаются стили при инициализации текстовых полей интерфейса.</p>
+<p>В коде расположены следующие методы:</p>
+<ul>
+<li>Обработка цвета текста кнопки при определённом действии (листинг 3.2)
+<ul>
+<li>&ldquo;MouseEnter()&rdquo; – обработка наведения мыши на текст (изменение цвета текста);</li>
+<li>&ldquo;MouseLeave()&rdquo; – обработка увода мыши с текста (изменение цвета текста);</li>
+<li>&ldquo;MouseDown()&rdquo; – обработка нажатия мыши по тексту (изменение цвета текста);</li>
+</ul>
+</li>
+<li>&ldquo;Game_MouseUp()&rdquo; – обработка нажатия кнопки “PLAY” (изменение цвета текста кнопки, отключение текущей составляющей интерфейса и начало игрового процесса) (листинг 3.3);</li>
+<li>“Controls_MouseUp()“ – обработка нажатия кнопки “CONTROLS” (изменение цвета текста кнопки, отключение текущей составляющей интерфейса и вывод на экран схемы управления) (листинг 3.4);</li>
+<li>“Quit_MouseUp()” – обработка нажатия кнопки “QUIT” (закрытие приложения) (листинг 3.5);</li>
+</ul>
+<p>Листинг 3.2 – Наведение мыши на кнопку</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">new</span> <span class="k">void</span> <span class="n">MouseEnter</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">MouseEventArgs</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">((</span><span class="n">TextBlock</span><span class="p">)</span><span class="n">sender</span><span class="p">).</span><span class="n">Foreground</span> <span class="p">=</span> <span class="n">Brushes</span><span class="p">.</span><span class="n">LightGray</span><span class="p">;</span>
+</span></span></code></pre></div><p>Пояснение к листингу 3.2: единственное, что делает данный метод – изменяет цвет текста кнопки на светло-серый.</p>
+<p>Листинг 3.3 – Переход из главного меню в игру</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Game_MouseUp</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">MouseButtonEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Main_Menu_Game</span><span class="p">.</span><span class="n">Foreground</span> <span class="p">=</span> <span class="n">Brushes</span><span class="p">.</span><span class="n">White</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">DisplayWindow</span><span class="p">(</span><span class="n">Main_Menu</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">canvas</span><span class="p">.</span><span class="n">Visibility</span> <span class="p">=</span> <span class="n">Visibility</span><span class="p">.</span><span class="n">Visible</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Cursor</span> <span class="p">=</span> <span class="n">Cursors</span><span class="p">.</span><span class="n">None</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GameStart</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Пояснение листингу 3.3: Данный метод изменяет цвет текста кнопки, отключает главное меню с помощью метода DisplayWindow() (листинг 3.6), включает интерфейс для игры (прописанный в XAML файле пустой (ничего не содержащий) Canvas, отвечающий за прорисовку интерфейса во время игрового процесса и содержание которого обрабатывается в Main_Window.xaml.cs), отключает курсор и вызывает метод GameStart(), отвечающий за запуск первого раунда игры (о нём речь пойдёт ниже).</p>
+<p>Листинг 3.4 – Переход из главного меню в меню управления</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Controls_MouseUp</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">MouseButtonEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Main_Menu_Controls</span><span class="p">.</span><span class="n">Foreground</span> <span class="p">=</span> <span class="n">Brushes</span><span class="p">.</span><span class="n">White</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">DisplayWindow</span><span class="p">(</span><span class="n">Main_Menu</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">DisplayWindow</span><span class="p">(</span><span class="n">Controls</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Пояснение к листингу 3.4: Данный метод изменяет цвет текста кнопки, отключает главное меню и включает меню с схемой управления.</p>
+<p>Листинг 3.5 – Выход из игры</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Quit_MouseUp</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">MouseButtonEventArgs</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Close</span><span class="p">();</span>
+</span></span></code></pre></div><p>Листинг 3.6 – Метод DisplayWindow()</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">DisplayWindow</span><span class="p">(</span><span class="n">StackPanel</span> <span class="n">window</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isDisplayed</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="n">window</span><span class="p">.</span><span class="n">IsEnabled</span><span class="p">,</span> <span class="n">window</span><span class="p">.</span><span class="n">Visibility</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="n">isDisplayed</span><span class="p">,</span> <span class="n">isDisplayed</span> <span class="p">?</span> <span class="n">Visibility</span><span class="p">.</span><span class="n">Visible</span> <span class="p">:</span> <span class="n">Visibility</span><span class="p">.</span><span class="n">Hidden</span><span class="p">);</span>
+</span></span></code></pre></div><p>Пояснение к листингу 3.6: Данный метод включает/выключает конкретное окно, а также делает его видимым/невидимым.</p>
+<p>По схожему принципу реализуются и остальные меню и необходимые для кнопок этих меню методы.</p>
+<h3 id="игровые-объекты">Игровые объекты</h3>
+<h4 id="запуск-первого-игрового-раунда">Запуск первого игрового раунда</h4>
+<p>Вышеупомянутый метод GameStart() запускает процесс подготовки игрового пространства для первого раунда, а именно:</p>
+<ul>
+<li>Инициализирует список объектов и добавляет туда корабль игрока и астероид (о этом позже);</li>
+<li>Отрисовывает пользовательский интерфейс в ранее упомянутом компоненте canvas в XAML файле (просто отрисовывает набор линий);</li>
+<li>Задаёт счётчикам жизней и очков начальные значения;</li>
+<li>Инициализирует таймер и запускает его.</li>
+</ul>
+<p>На таймере следует остановиться подробнее. В общем понимании, игра – набор объектов, постоянно взаимодействующих друг с другом; для просчёта всех этих взаимодействий необходимо вызывать определённые методы с определённой периодичностью, что и достигается за счёт таймера. От того, насколько большой период обновления был задан таймеру, зависит количество кадров в секунду, а также скорость обновления объектов и их взаимодействия и, следовательно, скорости игры в целом. Все эти методы можно разделить на следующие подгруппы:</p>
+<ul>
+<li>Передвижение элементов – просчёт положения игровых объектов в следующем кадре игры;</li>
+<li>Проверка коллизий – просчёт столкновений объектов друг с другом и, если произошло столкновение, нуждающееся в обработке, непосредственно его обработка;</li>
+<li>Обновление счётчиков жизней и очков для корабля игрока;</li>
+<li>Проверка на то, “зачищен” ли раунд (не осталось ли в игровом пространстве каких-либо объектов, кроме корабля игрока), и если да, то загрузка следующего раунда;</li>
+<li>Проверка, следует ли “спавнить” НЛО, и его создание, если проверка прошла успешно;</li>
+<li>Проверка количества жизней игрока и завершение игры, если жизней не осталось.</li>
+</ul>
+<p>Всё, ранее упомянутое мною в этом разделе можно реализовать так, как представлено в листинге 3.7:</p>
+<p>Листинг 3.7 – Методы для инициализации игрового процесса и обновления состояния объектов</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">GameStart</span><span class="p">()</span> <span class="c1">// метод для инициализации игры</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">gameStarted</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// обозначение того, что игра запущена</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Objects</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">.</span><span class="n">Generic</span><span class="p">.</span><span class="n">List</span><span class="p">&lt;</span><span class="n">GameObject</span><span class="p">&gt;();</span> <span class="c1">// инициализация списка объектов</span>
+</span></span><span class="line"><span class="cl">	<span class="n">SpawnObject</span><span class="p">(</span><span class="n">GameObjectTypes</span><span class="p">.</span><span class="n">Asteroid</span><span class="p">);</span> <span class="c1">// инициализация астероида</span>
+</span></span><span class="line"><span class="cl">	<span class="n">SpawnObject</span><span class="p">(</span><span class="n">GameObjectTypes</span><span class="p">.</span><span class="n">PlayerShip</span><span class="p">);</span> <span class="c1">// инициализация корабля игрока</span>
+</span></span><span class="line"><span class="cl">	<span class="n">UFOTimer</span> <span class="p">=</span> <span class="m">2000</span><span class="p">;</span> <span class="c1">// установление интервала между появлениями НЛО (об этом позже)</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="n">x</span> <span class="p">=</span> <span class="n">canvas</span><span class="p">.</span><span class="n">ActualWidth</span> <span class="p">/</span> <span class="m">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Shapes</span><span class="p">.</span><span class="n">Polyline</span> <span class="n">HUD</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Shapes</span><span class="p">.</span><span class="n">Polyline</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Points</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointCollection</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// отрисовка декоративной части интерфйса, отвечающей за счётчики жизней и очков</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">300</span><span class="p">,</span><span class="m">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">310</span><span class="p">,</span><span class="m">15</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">170</span><span class="p">,</span><span class="m">15</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">160</span><span class="p">,</span><span class="m">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">180</span><span class="p">,</span><span class="m">30</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">100</span><span class="p">,</span><span class="m">30</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">80</span><span class="p">,</span><span class="m">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">120</span><span class="p">,</span><span class="m">60</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">120</span><span class="p">,</span><span class="m">60</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">80</span><span class="p">,</span><span class="m">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">100</span><span class="p">,</span><span class="m">30</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">180</span><span class="p">,</span><span class="m">30</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">160</span><span class="p">,</span><span class="m">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">170</span><span class="p">,</span><span class="m">15</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">310</span><span class="p">,</span><span class="m">15</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">300</span><span class="p">,</span><span class="m">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">},</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Stroke</span> <span class="p">=</span> <span class="n">Brushes</span><span class="p">.</span><span class="n">LightGray</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Fill</span> <span class="p">=</span> <span class="n">Brushes</span><span class="p">.</span><span class="n">Transparent</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Effect</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Effects</span><span class="p">.</span><span class="n">FX</span><span class="p">(</span><span class="n">Colors</span><span class="p">.</span><span class="n">LightGray</span><span class="p">).</span><span class="n">Glow</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">StrokeThickness</span> <span class="p">=</span> <span class="m">5</span>
+</span></span><span class="line"><span class="cl">	<span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">canvas</span><span class="p">.</span><span class="n">Children</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">HUD</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Lives</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">playerShip</span><span class="p">.</span><span class="n">Lives</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span> <span class="c1">// обновление счётчика жизней</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Score</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">playerShip</span><span class="p">.</span><span class="n">Score</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span> <span class="c1">// обновление счётчика очков</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GameHUD</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GameHUD</span><span class="p">.</span><span class="n">Visibility</span> <span class="p">=</span> <span class="n">Visibility</span><span class="p">.</span><span class="n">Visible</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">DispatcherTimer</span><span class="p">();</span> <span class="c1">// инициализирует таймер, задаёт ему начальное значение интервала, привязывает к нему метод Game_Move_Elements(), отвечающий за обновление логики в игре и запускает таймер</span>
+</span></span><span class="line"><span class="cl">	<span class="n">timer</span><span class="p">.</span><span class="n">Tick</span> <span class="p">+=</span> <span class="n">GameTick</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">timer</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TimeSpan</span><span class="p">(</span><span class="m">100000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">timer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">GameTick</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">MoveElements</span><span class="p">();</span> <span class="c1">// обновляет игровые объекты в соответствии с их поведением, прописанным в их классах (преимущественно передвижение этих объектов)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">CollisionTest</span><span class="p">();</span> <span class="c1">// проверяет наличие столкновений</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Lives</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">playerShip</span><span class="p">.</span><span class="n">Lives</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span> <span class="c1">// обновление счётчика жизней</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Score</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">playerShip</span><span class="p">.</span><span class="n">Score</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span> <span class="c1">// обновление счётчика очков</span>
+</span></span><span class="line"><span class="cl">	<span class="n">CheckForRoundClear</span><span class="p">();</span> <span class="c1">// проверяет, завершён ли раунд</span>
+</span></span><span class="line"><span class="cl">	<span class="n">SpawnUFO</span><span class="p">();</span> <span class="c1">// создаёт НЛО</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">playerShip</span><span class="p">.</span><span class="n">Lives</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span> <span class="n">EndGame</span><span class="p">();</span> <span class="c1">// проверяет количество жизней у игрока и при успешной проверке завершает игру</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="класс-gameobject-и-общие-характеристики-классов-asteroid-playership-и-ufo">Класс GameObject и общие характеристики классов Asteroid, PlayerShip и UFO</h3>
+<p>В листинге 3.7 следует уделить вниманию списку Objects, который инициализируется перед началом первого раунда. Данный список в том или ином его виде реализуется во всех игровых движках (Unity, Unreal, т.д.); он содержит абсолютно все объекты, находящиеся в игровом пространстве (обычно, в нём же содержатся и объекты, отвечающие за пользовательский интерфейс, но в текущем проекте это ни к чему). Данный список можно применить для того, чтобы совершить некоторое действие со всеми объектами или же чтобы проверить наличие/отсутствие какого либо объекта/объектов. При желании, можно реализовать куда более сложную логику, однако для данного проекта этого вполне хватит. В этом проекте он используется в двух случаях: для передвижения всех объектов на их новую позицию перед отрисовкой следующего кадра, а также для проверки того, пройден ли раунд (есть ли в игровом пространстве астероиды/НЛО; если да, то раунд считается не пройденным).</p>
+<p>Сам список Objects принимает объекты GameObject, который является родительским классом для всех игровых объектов (корабль игрока, астероиды и НЛО) и содержит все основные поля и абстрактные методы, присущие всем (или хотя бы двум из трёх типов) объектам. Пример реализации в листинге 3.8:</p>
+<p>Листинг 3.8 – Класс GameObject</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="c1">// поля</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Point</span> <span class="n">Center</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// отвечает за визуальный центр игрового объекта, используется для отрисовки графики</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Point</span> <span class="n">Trajectory</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// отвечает за траекторию движения объекта, используется при просчёте его передвижения для следующего кадра</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">bool</span> <span class="n">RemoveFromGame</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// отвечает за удаление неиспользуемых объектов (к примеру, астероид был уничтожен, после анимации его распада данная переменная переводится в значение true и удаляется при следующем “тике” таймера)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">MainWindow</span> <span class="n">Parent</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// отвечает за то, на какой из экранов будет выводиться объект, используется для отрисовки на экран/стирания с экрана объекта и его эффектов</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">.</span><span class="n">Generic</span><span class="p">.</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Ordnances</span><span class="p">.</span><span class="n">Ordnance</span><span class="p">&gt;</span> <span class="n">Ordnances</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// содержит все снаряды, выпущенные данным объектом, используется при просчёте столкновений</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">.</span><span class="n">Generic</span><span class="p">.</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Effects</span><span class="p">.</span><span class="n">Effects</span><span class="p">&gt;</span> <span class="n">Effects</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// отвечает за наложенные на объект визуальные эффекты</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Shapes</span><span class="p">.</span><span class="n">Polyline</span> <span class="n">Geometry</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// отвечает за визуальное отображение объекта</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">bool</span> <span class="n">IsDestroyed</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// отвечает за уничтожение, но не удаление объекта</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">int</span> <span class="n">PointValue</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// отвечает за количество очков, получаемых игроком при уничтожении объекта</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="p">(</span><span class="kt">double</span> <span class="n">Thickness</span><span class="p">,</span> <span class="n">Brush</span> <span class="n">LineColor</span><span class="p">,</span> <span class="n">Color</span> <span class="n">GlowColor</span><span class="p">)</span> <span class="n">Explosion</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// отвечает за толщину и цвет объекта при его уничтожении</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">GameObject</span><span class="p">(</span><span class="n">MainWindow</span> <span class="n">parent</span><span class="p">,</span> <span class="n">Point</span> <span class="n">center</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pointValue</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Ordnances</span><span class="p">.</span><span class="n">Ordnance</span><span class="p">&gt;</span> <span class="n">ordnances</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Effects</span><span class="p">.</span><span class="n">Effects</span><span class="p">&gt;</span> <span class="n">effects</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Parent</span> <span class="p">=</span> <span class="n">parent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Center</span> <span class="p">=</span> <span class="n">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">PointValue</span> <span class="p">=</span> <span class="n">pointValue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Ordnances</span> <span class="p">=</span> <span class="n">ordnances</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Effects</span> <span class="p">=</span> <span class="n">effects</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// абстрактные классы</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">AddToDisplay</span><span class="p">(</span><span class="n">Effects</span><span class="p">.</span><span class="n">Effects</span> <span class="n">effect</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Parent</span><span class="p">.</span><span class="n">canvas</span><span class="p">.</span><span class="n">Children</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">Geometry</span><span class="p">);</span> <span class="c1">// отвечает за отрисовку эффекта на экране</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">bool</span> <span class="n">RemoveFromDisplay</span><span class="p">(</span><span class="n">Effects</span><span class="p">.</span><span class="n">Effects</span> <span class="n">effect</span><span class="p">)</span> <span class="p">{</span> <span class="n">Parent</span><span class="p">.</span><span class="n">canvas</span><span class="p">.</span><span class="n">Children</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">Geometry</span><span class="p">);</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">}</span><span class="c1">// отвечает за удаление эффекта с экрана</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">AddToDisplay</span><span class="p">(</span><span class="n">Ordnance</span> <span class="n">ordnance</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Parent</span><span class="p">.</span><span class="n">canvas</span><span class="p">.</span><span class="n">Children</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">ordnance</span><span class="p">.</span><span class="n">Geometry</span><span class="p">);</span> <span class="c1">// отвечает за отрисовку пули, выпущенной объектом, на экране (используется только для НЛО)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">bool</span> <span class="n">RemoveFromDisplay</span><span class="p">(</span><span class="n">Ordnance</span> <span class="n">ordnance</span><span class="p">)</span> <span class="p">{</span> <span class="n">Parent</span><span class="p">.</span><span class="n">canvas</span><span class="p">.</span><span class="n">Children</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">ordnance</span><span class="p">.</span><span class="n">Geometry</span><span class="p">);</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">}</span><span class="c1">// отвечает за удаление эффекта с экрана</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">void</span> <span class="n">Move</span><span class="p">();</span> <span class="c1">// метод передвижения </span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">void</span> <span class="n">DestroyedTimeoutCooldown</span><span class="p">();</span> <span class="c1">// метод, проверяющий, необходимо ли стирать объект из игры</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">void</span> <span class="n">Destroy</span><span class="p">();</span> <span class="c1">// метод уничтожения объекта</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Shapes</span><span class="p">.</span><span class="n">Polyline</span> <span class="n">GenerateExplosionGeometry</span><span class="p">(</span><span class="kt">int</span> <span class="n">i1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i2</span><span class="p">,</span> <span class="p">(</span><span class="kt">double</span> <span class="n">lineThickness</span><span class="p">,</span> <span class="n">Brush</span> <span class="n">lineColor</span><span class="p">,</span> <span class="n">Color</span> <span class="n">glowColor</span><span class="p">)</span> <span class="n">explosion</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Shapes</span><span class="p">.</span><span class="n">Polyline</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Points</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointCollection</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span><span class="p">[</span><span class="n">i1</span><span class="p">].</span><span class="n">X</span><span class="p">,</span> <span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span><span class="p">[</span><span class="n">i1</span><span class="p">].</span><span class="n">Y</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span><span class="p">[</span><span class="n">i2</span><span class="p">].</span><span class="n">X</span><span class="p">,</span> <span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span><span class="p">[</span><span class="n">i2</span><span class="p">].</span><span class="n">Y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="p">},</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Stroke</span> <span class="p">=</span> <span class="n">explosion</span><span class="p">.</span><span class="n">lineColor</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">StrokeThickness</span> <span class="p">=</span> <span class="n">explosion</span><span class="p">.</span><span class="n">lineThickness</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Effect</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FX</span><span class="p">(</span><span class="n">explosion</span><span class="p">.</span><span class="n">glowColor</span><span class="p">).</span><span class="n">Glow</span>
+</span></span><span class="line"><span class="cl">	<span class="p">};</span> <span class="c1">// метод, отвечающий за отрисовку конкретной линии и наложенных на неё эффектов на экране</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">TranslateTransform</span> <span class="n">TranslationPoints</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">TranslateTransform</span> <span class="n">translated</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TranslateTransform</span><span class="p">(</span><span class="n">OffsetX</span><span class="p">,</span> <span class="n">OffsetY</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">PointCollection</span> <span class="n">pointCollection</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointCollection</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">foreach</span> <span class="p">(</span><span class="n">Point</span> <span class="n">vert</span> <span class="k">in</span> <span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">translated</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">vert</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span> <span class="p">=</span> <span class="n">pointCollection</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Center</span> <span class="p">=</span> <span class="n">translated</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">Center</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">translated</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="c1">// метод, отвечающий за плавное передвижение объекта в игровом пространстве</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">RotateTransform</span> <span class="n">RotationPoints</span><span class="p">(</span><span class="kt">double</span> <span class="n">rotation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">RotateTransform</span> <span class="n">rotated</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RotateTransform</span><span class="p">(</span><span class="n">rotation</span><span class="p">,</span> <span class="n">Center</span><span class="p">.</span><span class="n">X</span><span class="p">,</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">PointCollection</span> <span class="n">pointCollection</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointCollection</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">foreach</span> <span class="p">(</span><span class="n">Point</span> <span class="n">vert</span> <span class="k">in</span> <span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">rotated</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">vert</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span> <span class="p">=</span> <span class="n">pointCollection</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">rotated</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="c1">// метод, отвечающий за поворот объекта, используется кораблём игрока и астероидами</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">void</span> <span class="n">TeleportObject</span><span class="p">(</span><span class="n">Point</span> <span class="n">teleportOffset</span><span class="p">);</span> <span class="c1">// вспомогательный метод, вызывающийся при достижении объектом края игрового простарнства, необходим для реализации уникальной для корабля игрока поведения</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Transform</span> <span class="n">TeleportPoints</span><span class="p">(</span><span class="n">Point</span> <span class="n">teleportOffset</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Transform</span> <span class="n">teleport</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TranslateTransform</span><span class="p">(</span><span class="n">teleportOffset</span><span class="p">.</span><span class="n">X</span><span class="p">,</span> <span class="n">teleportOffset</span><span class="p">.</span><span class="n">Y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">PointCollection</span> <span class="n">pointCollection</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointCollection</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">foreach</span> <span class="p">(</span><span class="n">Point</span> <span class="n">vert</span> <span class="k">in</span> <span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">teleport</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">vert</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span> <span class="p">=</span> <span class="n">pointCollection</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Center</span> <span class="p">=</span> <span class="n">teleport</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">Center</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">teleport</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="c1">// метод, отвечающий за телепортацию объекта при достижении им края игрового пространства, используется кораблём игрока и астероидами</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">int</span> <span class="n">GetPointValue</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">PointValue</span><span class="p">;</span> <span class="c1">// метод получения очков, которые должны зачисляться при его уничтожении</span>
+</span></span></code></pre></div><p>Все объекты, представляющие собой один из трёх классов, наследуют от родительского класса GameObject – Asteroid, PlayerShip и UFO – реализуют абстрактные классы определённым образом:</p>
+<ul>
+<li>методы AddToDisplay() и RemoveFromDisplay(), реализующие вывод заранее обработанной информации об пуле, выпущенной объектом,  или эффекте этого объекта на экран;</li>
+<li>абстрактный метод Move(), реализующий для всех трёх классов обработку их следующей позиции в игровом пространстве, обработку эффектов, привязанных к объекту, а также проверка на необходимость удаления объекта из игры;</li>
+<li>абстрактный метод TeleportPoints(), реализующий перемещение объекта при достижении им края игрового пространства противоположного края (включая обработку всех необходимых данных), использующийся в классах Asteroid и SpaceShip;</li>
+<li>абстрактный метод Destroy(), реализующий обработку попадания в объект и последующее его поведение (создание эффекта распада геометрии у всех трёх объектов, создание более мелких копий у астероида и возрождение у корабля игрока);</li>
+<li>метод GenerateExplosionGeometry(), реализующий просчёт отдельной векторной линии при уничтожении объекта для дальнейшего вывода на экран;</li>
+<li>метод GetPointValue(), возвращающий количество очков за уничтожение данного объекта.</li>
+</ul>
+<p>Перед тем, как разбираться в особенностях каждого из этих трёх классов, необходимо обговорить один момент; все эти три класса используют несколько вспомогательных методов для вывода графики и различных эффектов на экран, сгруппированных в два файла классов: Shapes.cs и Effects.cs.</p>
+<h4 id="файлы-shapes-и-effects">Файлы Shapes и Effects</h4>
+<p>Файл Shapes реализует внутри себя два класса:</p>
+<ul>
+<li>класс Draw, отвечающий исключительно за начальные значения векторов, отрисовывающих геометрию объекта;</li>
+<li>класс Shapes, отвечающий за форму игровых объектов, а именно возвращающий определённую коллекцию точек, определяющую эту форму (листинг 3.9):</li>
+</ul>
+<p>Листинг 3.9 – Класс Shapes</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">PointCollection</span> <span class="n">Points</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Shapes</span><span class="p">(</span><span class="n">Point</span> <span class="n">center</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isPlayerSpaceship</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="n">x</span> <span class="p">=</span> <span class="n">center</span><span class="p">.</span><span class="n">X</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="n">y</span> <span class="p">=</span> <span class="n">center</span><span class="p">.</span><span class="n">Y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">isPlayerSpaceship</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Points</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointCollection</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">10</span><span class="p">,</span><span class="n">y</span><span class="p">+</span><span class="m">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">-</span><span class="m">20</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">10</span><span class="p">,</span><span class="n">y</span><span class="p">+</span><span class="m">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">8</span><span class="p">,</span><span class="n">y</span><span class="p">+</span><span class="m">5</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">8</span><span class="p">,</span><span class="n">y</span><span class="p">+</span><span class="m">5</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">10</span><span class="p">,</span><span class="n">y</span><span class="p">+</span><span class="m">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">};</span> <span class="c1">// векторная фигура, построенная по данным точкам, похожа на наконечник стрелы (данные точки используются для отрисовки корабля игрока) (рисунок 3.2)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Points</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointCollection</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">30</span><span class="p">,</span><span class="n">y</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">30</span><span class="p">,</span><span class="n">y</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">20</span><span class="p">,</span><span class="n">y</span><span class="p">+</span><span class="m">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">20</span><span class="p">,</span><span class="n">y</span><span class="p">+</span><span class="m">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">30</span><span class="p">,</span><span class="n">y</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">20</span><span class="p">,</span><span class="n">y</span><span class="p">-</span><span class="m">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">10</span><span class="p">,</span><span class="n">y</span><span class="p">-</span><span class="m">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">5</span><span class="p">,</span><span class="n">y</span><span class="p">-</span><span class="m">20</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">5</span><span class="p">,</span><span class="n">y</span><span class="p">-</span><span class="m">20</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">+</span><span class="m">10</span><span class="p">,</span><span class="n">y</span><span class="p">-</span><span class="m">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">20</span><span class="p">,</span><span class="n">y</span><span class="p">-</span><span class="m">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="m">30</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">};</span> <span class="c1">// векторная фигура, построенная по данным точкам, похожа на летающую тарелку (данные точки используются для отрисовки НЛО) (рисунок 3.3)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><img src="../../img/player_ship.png" alt="Корабль игрока">
+Рисунок 3.2 – Корабль игрока</p>
+<p><img src="../../img/UFO.png" alt="Летающая тарелка">
+Рисунок 3.3 - НЛО</p>
+<p>Схожим образом строиться геометрия для астероидов (по три на каждый из трёх типов).</p>
+<p>Файл Effects реализует следующие классы:</p>
+<ul>
+<li>Родительский класс Effect, содержащий внутри себя все основные для его дочерних классов поля и логику (листинг 3.10);</li>
+<li>Дочерний класс ExplodeEffect, реализующий “эффект разлёта отдельных векторов, из которых состоял объект” (листинг 3.11);</li>
+<li>Класс FX, реализующий свечение контура объекта (листинг 3.12).</li>
+</ul>
+<p>Листинг 3.10 – Класс Effects</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Shape</span> <span class="n">Geometry</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">int</span> <span class="n">Lifetime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Effects</span><span class="p">(</span><span class="kt">int</span> <span class="n">lifetime</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Lifetime</span> <span class="p">=</span> <span class="n">lifetime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Effects</span><span class="p">(</span><span class="n">Polyline</span> <span class="n">geometry</span><span class="p">,</span> <span class="kt">int</span> <span class="n">lifetime</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Geometry</span> <span class="p">=</span> <span class="n">geometry</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Lifetime</span> <span class="p">=</span> <span class="n">lifetime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Effects</span><span class="p">(</span><span class="n">Point</span> <span class="n">firstPoint</span><span class="p">,</span> <span class="n">Point</span> <span class="n">secondPoint</span><span class="p">,</span> <span class="kt">int</span> <span class="n">lifetime</span><span class="p">,</span> <span class="n">Color</span> <span class="n">color</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Geometry</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Polyline</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Points</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointCollection</span><span class="p">()</span> <span class="p">{</span> <span class="n">firstPoint</span><span class="p">,</span> <span class="n">secondPoint</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Stroke</span> <span class="p">=</span> <span class="n">Brushes</span><span class="p">.</span><span class="n">White</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">StrokeThickness</span> <span class="p">=</span> <span class="m">3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Effect</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FX</span><span class="p">(</span><span class="n">color</span><span class="p">).</span><span class="n">Glow</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">bool</span> <span class="n">Display</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="err">Листинг</span> <span class="m">3.11</span> <span class="err">–</span> <span class="err">Класс</span> <span class="n">ExplodeEffect</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">double</span> <span class="n">Speed</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">double</span> <span class="n">OffsetX</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">double</span> <span class="n">OffsetY</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">ExplodeEffect</span><span class="p">(</span><span class="n">Point</span> <span class="n">center</span><span class="p">,</span> <span class="n">Point</span> <span class="n">trajectory</span><span class="p">,</span> <span class="kt">int</span> <span class="n">lifetime</span><span class="p">,</span> <span class="kt">double</span> <span class="n">speed</span><span class="p">,</span> <span class="n">Polyline</span> <span class="n">line</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">lifetime</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Speed</span> <span class="p">=</span> <span class="n">speed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">OffsetX</span> <span class="p">=</span> <span class="p">(</span><span class="n">trajectory</span><span class="p">.</span><span class="n">X</span> <span class="p">-</span> <span class="n">center</span><span class="p">.</span><span class="n">X</span><span class="p">)</span> <span class="p">*</span> <span class="n">Speed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">OffsetY</span> <span class="p">=</span> <span class="p">(</span><span class="n">trajectory</span><span class="p">.</span><span class="n">Y</span> <span class="p">-</span> <span class="n">center</span><span class="p">.</span><span class="n">Y</span><span class="p">)</span> <span class="p">*</span> <span class="n">Speed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">override</span> <span class="kt">bool</span> <span class="n">Display</span><span class="p">()</span> <span class="c1">// данный метод обрабатывает непосредственно разлёт векторов в стороны от их изначального расположения (их исчезновение, как и удаление самого объекта, реализуется в коде самого объекта)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">Lifetime</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">translation</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TranslateTransform</span><span class="p">(</span><span class="n">OffsetX</span><span class="p">,</span> <span class="n">OffsetY</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Polyline</span> <span class="n">polyline</span> <span class="p">=</span> <span class="p">(</span><span class="n">Polyline</span><span class="p">)</span><span class="n">Geometry</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">PointCollection</span> <span class="n">pointCollection</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointCollection</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">foreach</span> <span class="p">(</span><span class="n">Point</span> <span class="n">vert</span> <span class="k">in</span> <span class="n">polyline</span><span class="p">.</span><span class="n">Points</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">translation</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">vert</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">	<span class="n">polyline</span><span class="p">.</span><span class="n">Points</span> <span class="p">=</span> <span class="n">pointCollection</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Geometry</span> <span class="p">=</span> <span class="n">polyline</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Lifetime</span><span class="p">--;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Листинг 3.12 – Класс FX</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Media</span><span class="p">.</span><span class="n">Effects</span><span class="p">.</span><span class="n">DropShadowEffect</span> <span class="n">Glow</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">FX</span><span class="p">(</span><span class="n">Color</span> <span class="n">color</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Glow</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Media</span><span class="p">.</span><span class="n">Effects</span><span class="p">.</span><span class="n">DropShadowEffect</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Color</span> <span class="p">=</span> <span class="n">color</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ShadowDepth</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Direction</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">BlurRadius</span> <span class="p">=</span> <span class="m">10</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Теперь, когда вопрос с графикой был обговорён, можно вернуться к особенностям каждого из игровых объектов.</p>
+<h4 id="особенности-класса-asteroid">Особенности класса Asteroid</h4>
+<p>Отличительной чертой астероида является наличие у него “дочерних” версий – уменьшенных копий, на которые распадается изначальный астероид при своём уничтожении. Друг от друга эти копии отличаются уменьшенным размером и разным количеством очков, которые получает игрок при их уничтожении. Кроме этого, все астероиды имеют одинаковые характеристики и шаблон поведения, а именно:</p>
+<ol>
+<li>Астероиды делятся по размеру на три вариации: большую (20 очков), среднюю (50 очков) и маленькую (100 очков); за исключением получаемых за их уничтожение очков и их размера, они идентичны (методы Asteroid() (листинг 3.13)и Move() (листинг 3.15));</li>
+<li>При загрузке нового раунда в случайных точках игрового пространства появляется астероиды, количество которых численно равно текущему раунду (метод CheckForRoundClear() и SpawnObject() (листинг 3.14) в классе MainWindow);</li>
+<li>При появлении, астероид начинает с произвольной скоростью (ограниченной максимальным и минимальным значениями) двигаться в произвольном направлении без смены траектории движения по причине отсутствия внешних воздействиях, слегка вращаясь (метод Move());</li>
+<li>При достижении края игровой области астероид переносится на противоположную сторону игрового поля с сохранением направления движения (метод TeleportObject() (листинг 3.15));</li>
+<li>При попадании в астероид снаряда игрока, первый распадается на 2-4 меньшие свои версии (маленький астероид просто уничтожается), которые начинают вести себя согласно пунктам 3. и 4. (методы Destroy() (листинг 3.15)).</li>
+</ol>
+<p>Листинг 3.13 – Конструктор класса Asteroid</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Asteroid</span><span class="p">(</span><span class="n">MainWindow</span> <span class="n">parent</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pointValue</span><span class="p">,</span> <span class="kt">int</span> <span class="n">thickness</span><span class="p">,</span> <span class="n">Point</span> <span class="n">center</span><span class="p">,</span> <span class="kt">string</span> <span class="n">size</span><span class="p">,</span> <span class="kt">int</span> <span class="n">type</span><span class="p">,</span> <span class="kt">int</span> <span class="n">randomSeed</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">pointValue</span><span class="p">,</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">.</span><span class="n">Generic</span><span class="p">.</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Ordnances</span><span class="p">.</span><span class="n">Ordnance</span><span class="p">&gt;(),</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">.</span><span class="n">Generic</span><span class="p">.</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Effects</span><span class="p">.</span><span class="n">Effects</span><span class="p">&gt;())</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Geometry</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Shapes</span><span class="p">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">Brushes</span><span class="p">.</span><span class="n">SlateGray</span><span class="p">,</span> <span class="n">Brushes</span><span class="p">.</span><span class="n">Black</span><span class="p">,</span> <span class="n">thickness</span><span class="p">).</span><span class="n">Lines</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Shapes</span><span class="p">.</span><span class="n">Shapes</span><span class="p">(</span><span class="n">Center</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="n">size</span> <span class="p">+</span> <span class="n">type</span><span class="p">).</span><span class="n">Points</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">Size</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Thickness</span> <span class="p">=</span> <span class="n">thickness</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Explosion</span> <span class="p">=</span> <span class="p">(.</span><span class="m">5</span><span class="p">,</span> <span class="n">Brushes</span><span class="p">.</span><span class="n">LightBlue</span><span class="p">,</span> <span class="n">Colors</span><span class="p">.</span><span class="n">LightBlue</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">Seed</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Random</span><span class="p">(</span><span class="n">randomSeed</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Point</span> <span class="n">trajectory</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">Center</span><span class="p">.</span><span class="n">X</span> <span class="p">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span> <span class="p">-</span> <span class="m">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">trajectory</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RotateTransform</span><span class="p">(</span><span class="n">Seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">360</span><span class="p">),</span> <span class="n">Center</span><span class="p">.</span><span class="n">X</span><span class="p">,</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span><span class="p">).</span><span class="n">Transform</span><span class="p">(</span><span class="n">trajectory</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">OffsetX</span> <span class="p">=</span> <span class="p">(</span><span class="n">trajectory</span><span class="p">.</span><span class="n">X</span> <span class="p">-</span> <span class="n">Center</span><span class="p">.</span><span class="n">X</span><span class="p">)</span> <span class="p">*</span> <span class="n">Seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span> <span class="p">/</span> <span class="m">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">OffsetY</span> <span class="p">=</span> <span class="p">(</span><span class="n">trajectory</span><span class="p">.</span><span class="n">Y</span> <span class="p">-</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span><span class="p">)</span> <span class="p">*</span> <span class="n">Seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span> <span class="p">/</span> <span class="m">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Rotation</span> <span class="p">=</span> <span class="n">Seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(-</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span> <span class="p">/</span> <span class="n">Seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Листинг 3.14 – Методы CheckForRoundClear() и SpawnObject()класса MainWindow</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">CheckForRoundClear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">Objects</span><span class="p">.</span><span class="n">TrueForAll</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="p">!(</span><span class="n">x</span> <span class="k">is</span> <span class="n">Objects</span><span class="p">.</span><span class="n">Asteroid</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="p">!(</span><span class="n">x</span> <span class="k">is</span> <span class="n">UFO</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="p">...</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">gameRound</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">SpawnObject</span><span class="p">(</span><span class="n">GameObjectTypes</span><span class="p">.</span><span class="n">Asteroid</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">SpawnObject</span><span class="p">(</span><span class="n">GameObjectTypes</span> <span class="n">gameObjectType</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GameObject</span> <span class="n">spawnedObject</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">switch</span> <span class="p">(</span><span class="n">gameObjectType</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="p">...</span>
+</span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="n">GameObjectTypes</span><span class="p">.</span><span class="n">Asteroid</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">default</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">spawnedObject</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Objects</span><span class="p">.</span><span class="n">Asteroid</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">canvas</span><span class="p">.</span><span class="n">ActualWidth</span><span class="p">),</span> <span class="n">seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">canvas</span><span class="p">.</span><span class="n">ActualHeight</span><span class="p">)),</span> <span class="s">&#34;Large&#34;</span><span class="p">,</span> <span class="n">seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span> <span class="n">seed</span><span class="p">.</span><span class="n">Next</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Objects</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">spawnedObject</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">canvas</span><span class="p">.</span><span class="n">Children</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">spawnedObject</span><span class="p">.</span><span class="n">Geometry</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Листинг 3.15 – Методы Move(), TeleportObject() и Destroy()</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Move</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(!</span><span class="n">IsDestroyed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">RotationPoints</span><span class="p">(</span><span class="n">Rotation</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">TranslationPoints</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">Effects</span><span class="p">.</span><span class="n">RemoveAll</span><span class="p">(</span><span class="n">effect</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="p">!</span><span class="n">effect</span><span class="p">.</span><span class="n">Display</span><span class="p">()</span> <span class="p">&amp;&amp;</span> <span class="n">RemoveFromDisplay</span><span class="p">(</span><span class="n">effect</span><span class="p">);</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">	<span class="n">DestroyedTimeoutCooldown</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">TeleportObject</span><span class="p">(</span><span class="n">Point</span> <span class="n">teleportOffset</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">TeleportPoints</span><span class="p">(</span><span class="n">teleportOffset</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Destroy</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">IsDestroyed</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span><span class="p">.</span><span class="n">Count</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Shapes</span><span class="p">.</span><span class="n">Polyline</span> <span class="n">segment</span> <span class="p">=</span> <span class="n">GenerateExplosionGeometry</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="p">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">Explosion</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Effects</span><span class="p">.</span><span class="n">Effects</span> <span class="n">line</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ExplodeEffect</span><span class="p">(</span><span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">Center</span><span class="p">.</span><span class="n">X</span><span class="p">,</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span><span class="p">),</span> <span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="m">15</span> <span class="p">+</span> <span class="n">i</span><span class="p">,</span> <span class="p">.</span><span class="m">01</span><span class="p">,</span> <span class="n">segment</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Effects</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">AddToDisplay</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Geometry</span><span class="p">.</span><span class="n">Visibility</span> <span class="p">=</span> <span class="n">Visibility</span><span class="p">.</span><span class="n">Hidden</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">DestroyedTimer</span> <span class="p">=</span> <span class="m">200</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">Seed</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Random</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">Size</span> <span class="p">!=</span> <span class="s">&#34;Small&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="n">Seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">4</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="kt">int</span> <span class="n">type</span> <span class="p">=</span> <span class="n">Seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Asteroid</span> <span class="n">asteroid</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Asteroid</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">Size</span> <span class="p">==</span> <span class="s">&#34;Large&#34;</span> <span class="p">?</span> <span class="m">50</span> <span class="p">:</span> <span class="m">100</span><span class="p">,</span> <span class="n">Thickness</span> <span class="p">-</span> <span class="m">1</span><span class="p">,</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">Center</span><span class="p">.</span><span class="n">X</span> <span class="p">+</span> <span class="m">20</span><span class="p">,</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span> <span class="p">-</span> <span class="m">20</span><span class="p">),</span> <span class="n">Size</span> <span class="p">==</span> <span class="s">&#34;Large&#34;</span> <span class="p">?</span> <span class="s">&#34;Medium&#34;</span> <span class="p">:</span> <span class="s">&#34;Small&#34;</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">type</span> <span class="p">==</span> <span class="m">0</span> <span class="p">?</span> <span class="n">Seed</span><span class="p">.</span><span class="n">Next</span><span class="p">()</span> <span class="p">:</span> <span class="n">type</span> <span class="p">==</span> <span class="m">1</span> <span class="p">?</span> <span class="n">Seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">48000</span><span class="p">)</span> <span class="p">*</span> <span class="n">Seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">48000</span><span class="p">)</span> <span class="p">:</span> <span class="n">Seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">2000000000</span><span class="p">)</span> <span class="p">/</span> <span class="n">Seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2000000000</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Parent</span><span class="p">.</span><span class="n">Objects</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">asteroid</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Parent</span><span class="p">.</span><span class="n">canvas</span><span class="p">.</span><span class="n">Children</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">Geometry</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="особенности-класса-ufo">Особенности класса UFO</h4>
+<p>В отличие от астероидов, НЛО и корабль игрока способны выпускать снаряды, летящие в определённом направлении с определённой скоростью (причём скорость снарядов игрока на порядок выше скорости снарядов НЛО) до тех пор, пока не достигнут края игрового поля (или пока не истечёт их время жизни). Сами снаряды, выпускаемые кораблями, основаны на родительском классе Ordnance, реализующем основные для выпускаемого снаряда поля и абстрактные классы (листинг 3.16).</p>
+<p>Листинг 3.16 – Классы Ordnance и Bullet</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">class</span> <span class="nc">Ordnance</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">Point</span> <span class="n">Center</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">Point</span> <span class="n">Trajectory</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Shapes</span><span class="p">.</span><span class="n">Polyline</span> <span class="n">Geometry</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Media</span><span class="p">.</span><span class="n">Color</span> <span class="n">OrdnanceColor</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">int</span> <span class="n">Lifetime</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">int</span> <span class="n">GridSquare</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">Ordnance</span><span class="p">(</span><span class="n">Point</span> <span class="n">center</span><span class="p">,</span> <span class="n">Point</span> <span class="n">trajectory</span><span class="p">,</span> <span class="kt">int</span> <span class="n">lifetime</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Media</span><span class="p">.</span><span class="n">Color</span> <span class="n">color</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Center</span> <span class="p">=</span> <span class="n">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Trajectory</span> <span class="p">=</span> <span class="n">trajectory</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Lifetime</span> <span class="p">=</span> <span class="n">lifetime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">OrdnanceColor</span> <span class="p">=</span> <span class="n">color</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">bool</span> <span class="n">UsesPointCollision</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">bool</span> <span class="n">Move</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">abstract</span> <span class="n">Point</span> <span class="n">CollisionPoint</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Bullet</span> <span class="p">:</span> <span class="n">Ordnance</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">double</span> <span class="n">Speed</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">double</span> <span class="n">OffsetX</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">double</span> <span class="n">OffsetY</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">bool</span> <span class="n">AsteroidCollision</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">bool</span> <span class="n">PlayerShipCollision</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">bool</span> <span class="n">SaucerCollision</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">Bullet</span><span class="p">(</span><span class="n">Color</span> <span class="n">color</span><span class="p">,</span> <span class="n">Point</span> <span class="n">center</span><span class="p">,</span> <span class="n">Point</span> <span class="n">trajectory</span><span class="p">,</span> <span class="kt">double</span> <span class="n">speed</span><span class="p">,</span> <span class="kt">int</span> <span class="n">lifetime</span> <span class="p">=</span> <span class="m">200</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">trajectory</span><span class="p">,</span> <span class="n">lifetime</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Speed</span> <span class="p">=</span> <span class="n">speed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Geometry</span> <span class="p">=</span> <span class="n">GenerateGeometry</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">center</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">OffsetX</span> <span class="p">=</span> <span class="p">(</span><span class="n">Trajectory</span><span class="p">.</span><span class="n">X</span> <span class="p">-</span> <span class="n">Center</span><span class="p">.</span><span class="n">X</span><span class="p">)</span> <span class="p">*</span> <span class="n">Speed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">OffsetY</span> <span class="p">=</span> <span class="p">(</span><span class="n">Trajectory</span><span class="p">.</span><span class="n">Y</span> <span class="p">-</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span><span class="p">)</span> <span class="p">*</span> <span class="n">Speed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">private</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Shapes</span><span class="p">.</span><span class="n">Polyline</span> <span class="n">GenerateGeometry</span><span class="p">(</span><span class="n">Color</span> <span class="n">color</span><span class="p">,</span> <span class="n">Point</span> <span class="n">center</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Shapes</span><span class="p">.</span><span class="n">Polyline</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Effect</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Effects</span><span class="p">.</span><span class="n">FX</span><span class="p">(</span><span class="n">color</span><span class="p">).</span><span class="n">Glow</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Stroke</span> <span class="p">=</span> <span class="n">Brushes</span><span class="p">.</span><span class="n">White</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Fill</span> <span class="p">=</span> <span class="n">Brushes</span><span class="p">.</span><span class="n">White</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="n">StrokeThickness</span> <span class="p">=</span> <span class="m">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="n">StrokeEndLineCap</span> <span class="p">=</span> <span class="n">PenLineCap</span><span class="p">.</span><span class="n">Round</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="n">StrokeStartLineCap</span> <span class="p">=</span> <span class="n">PenLineCap</span><span class="p">.</span><span class="n">Round</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="n">StrokeLineJoin</span> <span class="p">=</span> <span class="n">PenLineJoin</span><span class="p">.</span><span class="n">Round</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Points</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointCollection</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">Center</span><span class="p">.</span><span class="n">X</span><span class="p">,</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">				<span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">Center</span><span class="p">.</span><span class="n">X</span> <span class="p">-</span> <span class="p">.</span><span class="m">5</span><span class="p">,</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span> <span class="p">-</span> <span class="p">.</span><span class="m">5</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">};</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">override</span> <span class="kt">bool</span> <span class="n">UsesPointCollision</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">override</span> <span class="kt">bool</span> <span class="n">Move</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">Lifetime</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">TranslateTransform</span> <span class="n">translation</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TranslateTransform</span><span class="p">(</span><span class="n">OffsetX</span><span class="p">,</span> <span class="n">OffsetY</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">PointCollection</span> <span class="n">pointCollection</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointCollection</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="k">foreach</span> <span class="p">(</span><span class="n">Point</span> <span class="n">vert</span> <span class="k">in</span> <span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">pointCollection</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">translation</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">vert</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span> <span class="p">=</span> <span class="n">pointCollection</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Lifetime</span><span class="p">--;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kd">override</span> <span class="n">Point</span> <span class="n">CollisionPoint</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>В самом классе UFO кроме уже рассмотренных методов Move(), Destroy() и других хочется выделить метод Fire(), через который непосредственно производится инициализация снаряда и задание ему необходимой траектории (листинг 3.17).</p>
+<p>Листинг 3.17 – Метод Fire()</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Fire</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">FireCooldown</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span> <span class="n">CanFire</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(!</span><span class="n">IsDestroyed</span> <span class="p">&amp;&amp;</span> <span class="n">CanFire</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Ordnance</span> <span class="n">ordnance</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Bullet</span><span class="p">(</span><span class="n">Colors</span><span class="p">.</span><span class="n">MediumPurple</span><span class="p">,</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">Center</span><span class="p">.</span><span class="n">X</span><span class="p">,</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span> <span class="p">+</span> <span class="m">10</span><span class="p">),</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">Enemy</span><span class="p">.</span><span class="n">Center</span><span class="p">.</span><span class="n">X</span><span class="p">,</span> <span class="n">Enemy</span><span class="p">.</span><span class="n">Center</span><span class="p">.</span><span class="n">Y</span><span class="p">),</span> <span class="p">.</span><span class="m">01</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Ordnances</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">ordnance</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">AddToDisplay</span><span class="p">(</span><span class="n">ordnance</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">CanFire</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">FireCooldown</span> <span class="p">=</span> <span class="m">60</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="особенности-класса-playership">Особенности класса PlayerShip</h4>
+<p>Корабль игрока – единственный игровой объект, над которым игрок имеет контроль. Более того, корабль – единственная сущность, которая способна менять вектор своего движения после инициализации. Для реализации этого были созданы методы Thrust() и Rotate(), изменяющие данные, содержащиеся внутри класса, на основе пользовательского ввода, а также метод TranslateShip(), применяющий изменённые данные к игровому объекту (листинг 3.18).</p>
+<p>Листинг 3.18 – Методы Thrust(), Rotate() и TranslateShip()</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Thrust</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(!</span><span class="n">IsDestroyed</span> <span class="p">&amp;&amp;</span> <span class="n">IsApplyingThrust</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">OffsetX</span> <span class="p">+=</span> <span class="n">Trajectory</span><span class="p">.</span><span class="n">X</span> <span class="p">-</span> <span class="n">Center</span><span class="p">.</span><span class="n">X</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">OffsetY</span> <span class="p">+=</span> <span class="n">Trajectory</span><span class="p">.</span><span class="n">Y</span> <span class="p">-</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Rotate</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(!</span><span class="n">IsDestroyed</span> <span class="p">&amp;&amp;</span> <span class="n">IsRotating</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">var</span> <span class="n">rotation</span> <span class="p">=</span> <span class="n">RotationPoints</span><span class="p">(</span><span class="n">IsRotating</span> <span class="p">==</span> <span class="kc">true</span> <span class="p">?</span> <span class="p">-</span><span class="m">5</span> <span class="p">:</span> <span class="m">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Trajectory</span> <span class="p">=</span> <span class="n">rotation</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">Trajectory</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ThrustStart</span> <span class="p">=</span> <span class="n">rotation</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">ThrustStart</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ThrustEnd</span> <span class="p">=</span> <span class="n">rotation</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">ThrustEnd</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">TranslateShip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">OffsetX</span> <span class="p">&lt;</span> <span class="p">.</span><span class="m">01</span> <span class="p">&amp;&amp;</span> <span class="n">OffsetX</span> <span class="p">&gt;</span> <span class="p">-.</span><span class="m">01</span><span class="p">)</span> <span class="n">OffsetX</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">OffsetY</span> <span class="p">&lt;</span> <span class="p">.</span><span class="m">01</span> <span class="p">&amp;&amp;</span> <span class="n">OffsetY</span> <span class="p">&gt;</span> <span class="p">-.</span><span class="m">01</span><span class="p">)</span> <span class="n">OffsetY</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(!</span><span class="n">IsDestroyed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">var</span> <span class="n">translation</span> <span class="p">=</span> <span class="n">TranslationPoints</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Trajectory</span> <span class="p">=</span> <span class="n">translation</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">Trajectory</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ThrustStart</span> <span class="p">=</span> <span class="n">translation</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">ThrustStart</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ThrustEnd</span> <span class="p">=</span> <span class="n">translation</span><span class="p">.</span><span class="n">Transform</span><span class="p">(</span><span class="n">ThrustEnd</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">OffsetX</span> <span class="p">&gt;</span> <span class="m">5</span><span class="p">)</span> <span class="n">OffsetX</span> <span class="p">=</span> <span class="m">5.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">OffsetX</span> <span class="p">&lt;</span> <span class="p">-</span><span class="m">5</span><span class="p">)</span> <span class="n">OffsetX</span> <span class="p">=</span> <span class="p">-</span><span class="m">5.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">OffsetY</span> <span class="p">&gt;</span> <span class="m">5</span><span class="p">)</span> <span class="n">OffsetY</span> <span class="p">=</span> <span class="m">5.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">OffsetY</span> <span class="p">&lt;</span> <span class="p">-</span><span class="m">5</span><span class="p">)</span> <span class="n">OffsetY</span> <span class="p">=</span> <span class="p">-</span><span class="m">5.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">OffsetX</span> <span class="p">!=</span> <span class="m">0</span> <span class="p">&amp;&amp;</span> <span class="p">!</span><span class="n">IsApplyingThrust</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">OffsetX</span> <span class="p">+=</span> <span class="n">OffsetX</span> <span class="p">&gt;</span> <span class="m">0</span> <span class="p">?</span> <span class="p">-.</span><span class="m">0005</span> <span class="p">:</span> <span class="p">.</span><span class="m">0005</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">OffsetY</span> <span class="p">!=</span> <span class="m">0</span> <span class="p">&amp;&amp;</span> <span class="p">!</span><span class="n">IsApplyingThrust</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">OffsetY</span> <span class="p">+=</span> <span class="n">OffsetY</span> <span class="p">&gt;</span> <span class="m">0</span> <span class="p">?</span> <span class="p">-.</span><span class="m">0005</span> <span class="p">:</span> <span class="p">.</span><span class="m">0005</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Ещё одной отличительной особенностью корабля игрока является возможность в практически любой момент времени мгновенно переместиться в случайную точку игрового поля, реализующаяся через метод Warp() (листинг 3.19).</p>
+<p>Листинг 3.19 - Метод Warp()</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Warp</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">WarpCooldown</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span> <span class="n">CanWarp</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(!</span><span class="n">IsDestroyed</span> <span class="p">&amp;&amp;</span> <span class="n">CanWarp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">seed</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Random</span><span class="p">().</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="n">System</span><span class="p">.</span><span class="n">Random</span> <span class="n">r</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Random</span><span class="p">(</span><span class="n">seed</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">double</span> <span class="n">x</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">Next</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">Parent</span><span class="p">.</span><span class="n">ActualWidth</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">double</span> <span class="n">y</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">Next</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">Parent</span><span class="p">.</span><span class="n">ActualHeight</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">TeleportObject</span><span class="p">(</span><span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">CanWarp</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">CanReappear</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">WarpCooldown</span> <span class="p">=</span> <span class="m">200</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Последней, но не по значимости, является возможность корабля возродиться в центре игрового поля через некоторое время после его уничтожения при условии, что у игрока в запасе ещё остались запасные жизни. Также, при повторном появлении, на корабль накладывается временная неуязвимость к любым повреждениям; делается это для того, чтобы дать игроку более честный игровой опыт (например, когда при появлении игрока он оказывается в центре астероида). Эти игровые механики реализованы через метод Respawn() (листинг 3.20).</p>
+<p>Листинг 3.20 – Метод Respawn()</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Respawn</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">Lives</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Health</span> <span class="p">=</span> <span class="n">MaxHealth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Lives</span><span class="p">--;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">OffsetX</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">OffsetY</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Speed</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">IsApplyingThrust</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">CanWarp</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">IsDestroyed</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">Center</span> <span class="p">=</span> <span class="n">RespawnLocation</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Trajectory</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">Center</span><span class="p">.</span><span class="n">X</span><span class="p">,</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span> <span class="p">-</span> <span class="p">.</span><span class="m">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ThrustStart</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">Center</span><span class="p">.</span><span class="n">X</span> <span class="p">-</span> <span class="m">5</span><span class="p">,</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span> <span class="p">+</span> <span class="m">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ThrustEnd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">Center</span><span class="p">.</span><span class="n">X</span> <span class="p">+</span> <span class="m">5</span><span class="p">,</span> <span class="n">Center</span><span class="p">.</span><span class="n">Y</span> <span class="p">+</span> <span class="m">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Geometry</span><span class="p">.</span><span class="n">Points</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Shapes</span><span class="p">.</span><span class="n">Shapes</span><span class="p">(</span><span class="n">Center</span><span class="p">,</span> <span class="kc">true</span><span class="p">).</span><span class="n">Points</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Geometry</span><span class="p">.</span><span class="n">Visibility</span> <span class="p">=</span> <span class="n">Visibility</span><span class="p">.</span><span class="n">Visible</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">IsInvincible</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">InvincibilityTimer</span> <span class="p">=</span> <span class="m">200</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="прочие-методы">Прочие методы</h3>
+<p>Теперь, когда нами были разобраны все три типа игровых объекта, а также обработка пользовательского ввода на стороне корабля игрока, можно проговорить:</p>
+<ul>
+<li>реализацию метода SpawnObject() в классе MainWindow, отвечающего за инициализацию всех игровых объектов и присвоения им начальных значений (листинг 3.21);</li>
+<li>пример реализации обработки пользовательского ввода на стороне самого окна, в котором происходит сам игровой процесс (листинг 3.22);</li>
+<li>реализацию проверки столкновений игровых объектов друг с другом (листинг 3.23).</li>
+</ul>
+<p>Листинг 3.21 – Метод SpawnObject()</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">SpawnObject</span><span class="p">(</span><span class="n">GameObjectTypes</span> <span class="n">gameObjectType</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GameObject</span> <span class="n">spawnedObject</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">switch</span> <span class="p">(</span><span class="n">gameObjectType</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="n">GameObjectTypes</span><span class="p">.</span><span class="n">PlayerShip</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">spawnedObject</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PlayerShip</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="n">gameRound</span><span class="p">,</span> <span class="n">playerLives</span><span class="p">,</span> <span class="n">playerHealth</span><span class="p">,</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">canvas</span><span class="p">.</span><span class="n">ActualWidth</span> <span class="p">/</span> <span class="m">2</span><span class="p">,</span> <span class="n">canvas</span><span class="p">.</span><span class="n">ActualHeight</span> <span class="p">/</span> <span class="m">2</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">			<span class="n">playerShip</span> <span class="p">=</span> <span class="p">(</span><span class="n">PlayerShip</span><span class="p">)</span><span class="n">spawnedObject</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="n">GameObjectTypes</span><span class="p">.</span><span class="n">UFO</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">spawnedObject</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UFO</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">500</span><span class="p">,</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">canvas</span><span class="p">.</span><span class="n">ActualWidth</span><span class="p">,</span> <span class="k">new</span> <span class="n">Random</span><span class="p">(</span><span class="n">seed</span><span class="p">.</span><span class="n">Next</span><span class="p">()).</span><span class="n">Next</span><span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">canvas</span><span class="p">.</span><span class="n">ActualHeight</span> <span class="p">-</span> <span class="m">50</span><span class="p">)),</span> <span class="m">20</span><span class="p">,</span> <span class="n">playerShip</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="n">GameObjectTypes</span><span class="p">.</span><span class="n">Asteroid</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">default</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">spawnedObject</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Objects</span><span class="p">.</span><span class="n">Asteroid</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">canvas</span><span class="p">.</span><span class="n">ActualWidth</span><span class="p">),</span> <span class="n">seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">canvas</span><span class="p">.</span><span class="n">ActualHeight</span><span class="p">)),</span> <span class="s">&#34;Large&#34;</span><span class="p">,</span> <span class="n">seed</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span> <span class="n">seed</span><span class="p">.</span><span class="n">Next</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Objects</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">spawnedObject</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">canvas</span><span class="p">.</span><span class="n">Children</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">spawnedObject</span><span class="p">.</span><span class="n">Geometry</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Листинг 3.22 – Методы canvas_KeyDown() и canvas_KeyUp()</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">canvas_KeyDown</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">KeyEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">gameStarted</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Key</span> <span class="p">==</span> <span class="n">Key</span><span class="p">.</span><span class="n">W</span><span class="p">)</span> <span class="n">playerShip</span><span class="p">.</span><span class="n">IsApplyingThrust</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Key</span> <span class="p">==</span> <span class="n">Key</span><span class="p">.</span><span class="n">A</span><span class="p">)</span> <span class="n">playerShip</span><span class="p">.</span><span class="n">IsRotating</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Key</span> <span class="p">==</span> <span class="n">Key</span><span class="p">.</span><span class="n">D</span><span class="p">)</span> <span class="n">playerShip</span><span class="p">.</span><span class="n">IsRotating</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">canvas_KeyUp</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">KeyEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">gameStarted</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">switch</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">case</span> <span class="n">Key</span><span class="p">.</span><span class="n">W</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">				<span class="n">playerShip</span><span class="p">.</span><span class="n">IsApplyingThrust</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="n">playerShip</span><span class="p">.</span><span class="n">Speed</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">case</span> <span class="n">Key</span><span class="p">.</span><span class="n">A</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="k">case</span> <span class="n">Key</span><span class="p">.</span><span class="n">D</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">				<span class="n">playerShip</span><span class="p">.</span><span class="n">IsRotating</span> <span class="p">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">case</span> <span class="n">Key</span><span class="p">.</span><span class="n">Space</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">				<span class="n">playerShip</span><span class="p">.</span><span class="n">Fire</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">				<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">case</span> <span class="n">Key</span><span class="p">.</span><span class="n">S</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">				<span class="n">playerShip</span><span class="p">.</span><span class="n">Warp</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">				<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">case</span> <span class="n">Key</span><span class="p">.</span><span class="n">Escape</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">				<span class="n">timer</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">				<span class="n">Pause_Menu</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="n">Pause_Menu</span><span class="p">.</span><span class="n">Visibility</span> <span class="p">=</span> <span class="n">Visibility</span><span class="p">.</span><span class="n">Visible</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="n">Cursor</span> <span class="p">=</span> <span class="n">Cursors</span><span class="p">.</span><span class="n">Cross</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="n">canvas</span><span class="p">.</span><span class="n">Visibility</span> <span class="p">=</span> <span class="n">Visibility</span><span class="p">.</span><span class="n">Hidden</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Листинг 3.23 – Методы проверки пересечения коллизий</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">bool</span> <span class="n">FindCollisionWithDetails</span><span class="p">(</span><span class="n">GameObject</span> <span class="n">gameObject</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Shapes</span><span class="p">.</span><span class="n">Shape</span> <span class="n">shape</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">IntersectionDetail</span> <span class="n">collides</span> <span class="p">=</span> <span class="n">gameObject</span><span class="p">.</span><span class="n">Geometry</span><span class="p">.</span><span class="n">RenderedGeometry</span><span class="p">.</span><span class="n">FillContainsWithDetail</span><span class="p">(</span><span class="n">shape</span><span class="p">.</span><span class="n">RenderedGeometry</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">ToleranceType</span><span class="p">.</span><span class="n">Relative</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">collides</span> <span class="p">!=</span> <span class="n">IntersectionDetail</span><span class="p">.</span><span class="n">Empty</span> <span class="p">&amp;&amp;</span> <span class="n">collides</span> <span class="p">!=</span> <span class="n">IntersectionDetail</span><span class="p">.</span><span class="n">NotCalculated</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">bool</span> <span class="n">FindCollision</span><span class="p">(</span><span class="n">GameObject</span> <span class="n">gameObject</span><span class="p">,</span> <span class="n">Ordnances</span><span class="p">.</span><span class="n">Ordnance</span> <span class="n">ordnance</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">gameObject</span><span class="p">.</span><span class="n">Geometry</span><span class="p">.</span><span class="n">RenderedGeometry</span><span class="p">.</span><span class="n">FillContains</span><span class="p">(</span><span class="n">ordnance</span><span class="p">.</span><span class="n">CollisionPoint</span><span class="p">())</span> <span class="p">||</span> <span class="n">FindCollisionWithDetails</span><span class="p">(</span><span class="n">gameObject</span><span class="p">,</span> <span class="n">ordnance</span><span class="p">.</span><span class="n">Geometry</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">CollisionTest</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">objectsCopy</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">.</span><span class="n">Generic</span><span class="p">.</span><span class="n">List</span><span class="p">&lt;</span><span class="n">GameObject</span><span class="p">&gt;(</span><span class="n">Objects</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">foreach</span> <span class="p">(</span><span class="n">GameObject</span> <span class="n">gameObject</span> <span class="k">in</span> <span class="n">objectsCopy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(!(</span><span class="n">gameObject</span> <span class="k">is</span> <span class="n">PlayerShip</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Rect</span> <span class="n">boundingBox</span> <span class="p">=</span> <span class="n">gameObject</span><span class="p">.</span><span class="n">Geometry</span><span class="p">.</span><span class="n">RenderedGeometry</span><span class="p">.</span><span class="n">Bounds</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">boundingBox</span><span class="p">.</span><span class="n">Inflate</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="kt">bool</span> <span class="n">skipPlayerHitTest</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">foreach</span> <span class="p">(</span><span class="n">Ordnances</span><span class="p">.</span><span class="n">Ordnance</span> <span class="n">playerOrdnance</span> <span class="k">in</span> <span class="n">playerShip</span><span class="p">.</span><span class="n">Ordnances</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="k">if</span> <span class="p">(!</span><span class="n">gameObject</span><span class="p">.</span><span class="n">IsDestroyed</span> <span class="p">&amp;&amp;</span> <span class="n">playerOrdnance</span><span class="p">.</span><span class="n">UsesPointCollision</span><span class="p">()</span> <span class="p">&amp;&amp;</span> <span class="n">FindCollision</span><span class="p">(</span><span class="n">gameObject</span><span class="p">,</span> <span class="n">playerOrdnance</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="n">skipPlayerHitTest</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">					<span class="n">gameObject</span><span class="p">.</span><span class="n">Destroy</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">					<span class="n">playerShip</span><span class="p">.</span><span class="n">AddPoints</span><span class="p">(</span><span class="n">gameObject</span><span class="p">.</span><span class="n">GetPointValue</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">					<span class="n">playerOrdnance</span><span class="p">.</span><span class="n">Lifetime</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(!</span><span class="n">skipPlayerHitTest</span> <span class="p">&amp;&amp;</span> <span class="p">!</span><span class="n">playerShip</span><span class="p">.</span><span class="n">IsInvincible</span> <span class="p">&amp;&amp;</span> <span class="p">!</span><span class="n">playerShip</span><span class="p">.</span><span class="n">IsDestroyed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="k">foreach</span> <span class="p">(</span><span class="n">Ordnances</span><span class="p">.</span><span class="n">Ordnance</span> <span class="n">enemyOrdnance</span> <span class="k">in</span> <span class="n">gameObject</span><span class="p">.</span><span class="n">Ordnances</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">					<span class="k">if</span> <span class="p">(</span><span class="n">enemyOrdnance</span><span class="p">.</span><span class="n">UsesPointCollision</span><span class="p">()</span> <span class="p">&amp;&amp;</span> <span class="n">FindCollision</span><span class="p">(</span><span class="n">playerShip</span><span class="p">,</span> <span class="n">enemyOrdnance</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">					<span class="p">{</span>
+</span></span><span class="line"><span class="cl">						<span class="n">playerShip</span><span class="p">.</span><span class="n">Destroy</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">						<span class="n">enemyOrdnance</span><span class="p">.</span><span class="n">Lifetime</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">					<span class="p">}</span>
+</span></span><span class="line"><span class="cl">				<span class="k">if</span> <span class="p">(!</span><span class="n">playerShip</span><span class="p">.</span><span class="n">IsDestroyed</span> <span class="p">&amp;&amp;</span> <span class="p">!</span><span class="n">gameObject</span><span class="p">.</span><span class="n">IsDestroyed</span> <span class="p">&amp;&amp;</span> <span class="n">boundingBox</span><span class="p">.</span><span class="n">IntersectsWith</span><span class="p">(</span><span class="n">playerShip</span><span class="p">.</span><span class="n">Geometry</span><span class="p">.</span><span class="n">RenderedGeometry</span><span class="p">.</span><span class="n">Bounds</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">FindCollisionWithDetails</span><span class="p">(</span><span class="n">gameObject</span><span class="p">,</span> <span class="n">playerShip</span><span class="p">.</span><span class="n">Geometry</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">					<span class="n">playerShip</span><span class="p">.</span><span class="n">Destroy</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h1 id="заключение">Заключение</h1>
+<p>По итогу работы была создана игра “по мотивам” Asteroids с реализацией основных геймплейных моментов оригинала. Тем не менее, над проектом ещё можно поработать, а именно:</p>
+<ul>
+<li>добавить аудиоэффекты;</li>
+<li>улучшить графическую составляющую;</li>
+<li>внедрить новые типы врагов;</li>
+<li>усложнить алгоритм поведения летающих тарелок;</li>
+<li>продумать прогрессию игрока через уровни;</li>
+<li>сделать систему лучшего счёта с его сохранением между игровыми сессиями;</li>
+<li>реализовать локальный мультиплеер;</li>
+<li>реализовать различные типы вооружения;</li>
+<li>продумать систему временных бонусов с особыми эффектами;</li>
+<li>создать систему классов для корабля игрока;</li>
+<li>добавить систему улучшений, работающую между сессиями;</li>
+<li>и прочее.</li>
+</ul>
+<p>В общем и целом, надеюсь, что, основываясь на данный монолит текста,  можно реализовать простую видеоигру. Да, мною был показан далеко не весь код, однако это было сделано с расчётом на то, что тот, кто будет опираться на данное руководство при написании своей игры, додумал некоторые базовые принципы сам, и, быть может, придумал бы лучшее решение для реализации некоторых аспектов.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=%2fpage%2fproject%2f&amp;text=%d0%9f%d1%80%d0%be%d0%b5%d0%ba%d1%82%20%22Asteroids%22&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=%2fpage%2fproject%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=%2fpage%2fproject%2f&amp;title=%d0%9f%d1%80%d0%be%d0%b5%d0%ba%d1%82%20%22Asteroids%22" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=%2fpage%2fproject%2f&amp;title=%d0%9f%d1%80%d0%be%d0%b5%d0%ba%d1%82%20%22Asteroids%22" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=%2fpage%2fproject%2f&amp;title=%d0%9f%d1%80%d0%be%d0%b5%d0%ba%d1%82%20%22Asteroids%22" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=%2fpage%2fproject%2f&amp;description=%d0%9f%d1%80%d0%be%d0%b5%d0%ba%d1%82%20%22Asteroids%22" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    <div class="page-meta">
+  
+  
+  
+</div>
+
+
+  <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="https://github.com/DarthIlius/Singleplayer-Computer-Game-ECOllapse-" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://vk.com/username" title="VK">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://telegram.me/username" title="Telegram">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              ECOllapce
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            0001
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Project Practice &#34;ECOllapse&#34; Site</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          На базе <a href="https://gohugo.io">Hugo v0.147.3</a> &nbsp;&bull;&nbsp; Тема <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> на базе <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
